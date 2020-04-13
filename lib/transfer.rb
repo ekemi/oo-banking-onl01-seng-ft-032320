@@ -19,8 +19,8 @@ end
 def execute_transaction
 
   if @sender.balance > transfer_amount && @status =="pending"
-    @sender.balance -=transfer_amount
-    @receiver.amount+=transfer_amount
+    @sender.balance -=@transfer_amount
+    @receiver.amount+=@transfer_amount
     @status = "complete"
 
   else
