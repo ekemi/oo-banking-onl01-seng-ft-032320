@@ -8,7 +8,7 @@ def initialize(sender,receiver,amount)
   @sender = sender
   @receiver = receiver
   @status= "pending"
-  @amout = 50
+  @amount = 50
 
 end
 def valid?
