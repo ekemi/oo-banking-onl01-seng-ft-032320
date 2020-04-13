@@ -1,28 +1,3 @@
-class Transfer
-  # your code here
-  def deposit(dep)
-
-    @balance = @balance + dep
-  end
-
-  def display_balance
-
-   "Your balane is #{@balance}"
-  end
-
-  def valid?
-valid = (@status =="open"&& @balance > 0)? true : false
-  end
-
-   def close_account
-    @status = "closed"
-   end
-end
-
-# p = BankAccount.new("hellp")
-# p.close_account
-
-
 
 class Transfer
   attr_accessor :sender, :receiver,:transfer_amount, :status
@@ -43,9 +18,9 @@ end
 
 def execute_transaction
 
-  if @sender.balance > @amount && @status =="pending"
-    @sender.balance -=@amount
-    @receiver.amount+=@amount
+  if @sender.balance > transfer_amount && @status =="pending"
+    @sender.balance -=transfer_amount
+    @receiver.amount+=transfer_amount
     @status = "complete"
 
   else
@@ -57,8 +32,8 @@ end
 
 def reverse_transfer
 if @status =="complete"
-   @sender.balane -=@amount
-   @receiver.balance+=@amount
+   @sender.balane -=@transfer_amount
+   @receiver.balance+=@transfer_amount
    @status="reversed"
 end
 end
